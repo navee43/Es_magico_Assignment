@@ -1,0 +1,145 @@
+{
+  "result": {
+    "is_invoice": true,
+    "vendor": "Bluefin Cloud Services Inc.",
+    "invoice_number": "BF-2026-07-11874",
+    "invoice_date": "2026-07-01",
+    "currency": "USD",
+    "line_items": [
+      {
+        "description": "Compute instances (instance-hours)",
+        "quantity": 1440,
+        "amount": 122.4
+      },
+      {
+        "description": "Managed database, standard tier (month)",
+        "quantity": 1,
+        "amount": 249.0
+      },
+      {
+        "description": "Object storage (TB-month)",
+        "quantity": 2.5,
+        "amount": 57.5
+      },
+      {
+        "description": "Support plan, Business (month)",
+        "quantity": 1,
+        "amount": 100.0
+      }
+    ],
+    "tax_total": 0.0,
+    "total": 528.9,
+    "needs_review": false
+  },
+  "review_reasons": [],
+  "diagnostics": {
+    "status": "success",
+    "error_code": null,
+    "error_message": null,
+    "route": "digital_text",
+    "route_reason": "every page has a usable embedded text layer (exact text, no OCR or images needed)",
+    "document_type": "invoice",
+    "review_reasons": [],
+    "review_details": [
+      {
+        "code": "LINE_ITEM_ARITHMETIC",
+        "message": "quantity × unit price ≠ amount on line(s) 1 (may be per-line discounts or tax)",
+        "severity": "info"
+      }
+    ],
+    "validation": {
+      "schema_valid": true,
+      "schema_valid_first_try": true,
+      "financial": {
+        "line_items_sum": 528.9,
+        "tax_total": 0.0,
+        "expected_total": 528.9,
+        "total": 528.9,
+        "difference": 0.0,
+        "tolerance": 0.09,
+        "explanation": null,
+        "status": "pass"
+      },
+      "grounding": {
+        "checked": true,
+        "exact_text": true,
+        "invoice_number_found": true,
+        "total_found": true,
+        "vendor_found": true
+      },
+      "checks": [
+        {
+          "code": "LINE_ITEM_ARITHMETIC",
+          "severity": "info",
+          "message": "quantity × unit price ≠ amount on line(s) 1 (may be per-line discounts or tax)"
+        }
+      ]
+    },
+    "llm_reported_issues": [],
+    "extras": {
+      "subtotal": 528.9,
+      "discount_total": null,
+      "other_charges_total": null,
+      "invoice_date_as_printed": "2026-07-01",
+      "line_item_unit_prices": [
+        0.09,
+        249.0,
+        23.0,
+        100.0
+      ]
+    },
+    "attempts": [
+      {
+        "number": 1,
+        "purpose": "initial",
+        "route": "digital_text",
+        "model": "groq:openai/gpt-oss-120b",
+        "http_calls": 1,
+        "input_tokens": 1704,
+        "cached_input_tokens": 1280,
+        "output_tokens": 751,
+        "cost_usd": 0.0006102,
+        "latency_ms": 2165,
+        "outcome": "ok",
+        "error": null
+      }
+    ],
+    "usage": {
+      "models": [
+        "groq:openai/gpt-oss-120b"
+      ],
+      "llm_attempts": 0,
+      "http_calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "total_tokens": 0,
+      "cost_usd": 0.0,
+      "retry_cost_usd": 0.0
+    },
+    "source": {
+      "kind": "pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 45330,
+      "sha256": "7e8a43ac829e24de578bcc8e321d2bce96ca77c28a7af0196a7aaa12dd5c8006",
+      "pages_total": 1,
+      "pages_processed": 1,
+      "digital_pages": 1,
+      "ocr_pages": 0,
+      "scanned_with_text_layer_pages": 0,
+      "ocr_mean_confidence": null,
+      "ocr_word_count": 0,
+      "ocr_error": null,
+      "text_chars": 1475,
+      "truncated_pages": false
+    },
+    "processing_ms": 17,
+    "cached": true,
+    "original_cost_usd": 0.0006102,
+    "original_processing_ms": 2178,
+    "prompt_version": "v1",
+    "pipeline_version": "1.1.0",
+    "routing_mode": "auto"
+  },
+  "source_file": "U04.pdf"
+}

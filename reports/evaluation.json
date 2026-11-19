@@ -1,0 +1,447 @@
+{
+  "meta": {
+    "generated_at": "2026-11-19T19:28:20+00:00",
+    "tag": "main",
+    "synthetic": false,
+    "documents": 10,
+    "llm_provider": "groq",
+    "model": "openai/gpt-oss-120b",
+    "vision_model": "qwen/qwen3.8-27b",
+    "models_seen": [
+      "groq:openai/gpt-oss-120b",
+      "groq:qwen/qwen3.8-27b"
+    ],
+    "routing_mode": "auto",
+    "prompt_version": "v1",
+    "prompt_fingerprint": "f6ffe9b7209e",
+    "pipeline_version": "1.1.0",
+    "validation_retry": true,
+    "ground_truth": "data\\ground_truth",
+    "score_only": false
+  },
+  "metrics": {
+    "counts": {
+      "labelled_documents": 10,
+      "ground_truth_invoices": 9,
+      "ground_truth_non_invoices": 1,
+      "processing_failures": 0
+    },
+    "field_accuracy": [
+      {
+        "field": "is_invoice",
+        "evaluated_on": "all labelled documents",
+        "n": 10,
+        "correct": 10,
+        "accuracy": 1.0,
+        "wrong": 0,
+        "missing": 0,
+        "spurious": 0,
+        "failed": 0
+      },
+      {
+        "field": "vendor",
+        "evaluated_on": "ground-truth invoices",
+        "n": 9,
+        "correct": 9,
+        "accuracy": 1.0,
+        "wrong": 0,
+        "missing": 0,
+        "spurious": 0,
+        "failed": 0
+      },
+      {
+        "field": "invoice_number",
+        "evaluated_on": "ground-truth invoices",
+        "n": 9,
+        "correct": 9,
+        "accuracy": 1.0,
+        "wrong": 0,
+        "missing": 0,
+        "spurious": 0,
+        "failed": 0
+      },
+      {
+        "field": "invoice_date",
+        "evaluated_on": "ground-truth invoices",
+        "n": 9,
+        "correct": 9,
+        "accuracy": 1.0,
+        "wrong": 0,
+        "missing": 0,
+        "spurious": 0,
+        "failed": 0
+      },
+      {
+        "field": "currency",
+        "evaluated_on": "ground-truth invoices",
+        "n": 9,
+        "correct": 9,
+        "accuracy": 1.0,
+        "wrong": 0,
+        "missing": 0,
+        "spurious": 0,
+        "failed": 0
+      },
+      {
+        "field": "line_items",
+        "evaluated_on": "ground-truth invoices",
+        "n": 9,
+        "correct": 8,
+        "accuracy": 0.8889,
+        "wrong": 1,
+        "missing": 0,
+        "spurious": 0,
+        "failed": 0
+      },
+      {
+        "field": "tax_total",
+        "evaluated_on": "ground-truth invoices",
+        "n": 9,
+        "correct": 9,
+        "accuracy": 1.0,
+        "wrong": 0,
+        "missing": 0,
+        "spurious": 0,
+        "failed": 0
+      },
+      {
+        "field": "total",
+        "evaluated_on": "ground-truth invoices",
+        "n": 9,
+        "correct": 9,
+        "accuracy": 1.0,
+        "wrong": 0,
+        "missing": 0,
+        "spurious": 0,
+        "failed": 0
+      }
+    ],
+    "overall_field_accuracy_on_invoices": 0.9861,
+    "full_document_exact_match_rate": 0.9,
+    "exact_match_invoices": 0.8889,
+    "exact_match_non_invoices": 1.0,
+    "non_invoice_null_compliance": 1.0,
+    "classification": {
+      "confusion_matrix": {
+        "invoice": {
+          "invoice": 9,
+          "non_invoice": 0,
+          "failed": 0
+        },
+        "non_invoice": {
+          "invoice": 0,
+          "non_invoice": 1,
+          "failed": 0
+        }
+      },
+      "positive_class": "invoice",
+      "tp": 9,
+      "fp": 0,
+      "fn": 0,
+      "tn": 1,
+      "failed_on_non_invoices": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "accuracy": 1.0,
+      "note": "Processing failures are counted as wrong (FN for invoices); never as correct non-invoices."
+    },
+    "line_items": {
+      "documents": 9,
+      "expected_rows": 66,
+      "predicted_rows": 65,
+      "matched_rows": 65,
+      "precision": 1.0,
+      "recall": 0.9848,
+      "f1": 0.9923,
+      "documents_all_rows_correct": 8,
+      "documents_correct_row_count": 8,
+      "rows_amount_matched_but_description_or_qty_differs": 0
+    },
+    "validation": {
+      "documents": 10,
+      "schema_valid": 10,
+      "schema_validation_success_rate": 1.0,
+      "schema_valid_first_try_rate": 1.0,
+      "financial_status_counts": {
+        "pass": 8,
+        "mismatch": 1
+      },
+      "financial_validation_pass_rate": 0.8889,
+      "financial_validation_note": "pass rate over predicted invoices whose totals and line amounts were all present"
+    },
+    "review": {
+      "definition": "A document 'contains an error' if it is not a full exact match (or processing failed).",
+      "documents": 10,
+      "flagged": 1,
+      "documents_with_errors": 1,
+      "incorrect_caught": 1,
+      "incorrect_missed": 0,
+      "correct_but_flagged": 0,
+      "correct_not_flagged": 9,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "pct_flagged_with_errors": 100.0,
+      "missed_documents": []
+    },
+    "performance": {
+      "avg_processing_ms": 13134,
+      "median_processing_ms": 11702,
+      "max_processing_ms": 28544,
+      "avg_cost_usd": 0.002166,
+      "total_cost_usd": 0.021662,
+      "avg_tokens": 3412
+    },
+    "per_document": [
+      {
+        "document": "L01",
+        "source_file": "L01.pdf",
+        "expected_is_invoice": true,
+        "status": "success",
+        "error_code": null,
+        "route": "digital_text",
+        "correct_fields": 8,
+        "total_fields": 8,
+        "accuracy": 1.0,
+        "exact_match": true,
+        "wrong_fields": [],
+        "needs_review": false,
+        "review_reasons": [],
+        "cost_usd": 0.000736,
+        "processing_ms": 3234,
+        "cached": true
+      },
+      {
+        "document": "L02",
+        "source_file": "L02.jpg",
+        "expected_is_invoice": true,
+        "status": "success",
+        "error_code": null,
+        "route": "vision",
+        "correct_fields": 8,
+        "total_fields": 8,
+        "accuracy": 1.0,
+        "exact_match": true,
+        "wrong_fields": [],
+        "needs_review": false,
+        "review_reasons": [],
+        "cost_usd": 0.003788,
+        "processing_ms": 2421,
+        "cached": true
+      },
+      {
+        "document": "L03",
+        "source_file": "L03.pdf",
+        "expected_is_invoice": true,
+        "status": "success",
+        "error_code": null,
+        "route": "digital_text",
+        "correct_fields": 8,
+        "total_fields": 8,
+        "accuracy": 1.0,
+        "exact_match": true,
+        "wrong_fields": [],
+        "needs_review": false,
+        "review_reasons": [],
+        "cost_usd": 0.001133,
+        "processing_ms": 3537,
+        "cached": true
+      },
+      {
+        "document": "L04",
+        "source_file": "L04.pdf",
+        "expected_is_invoice": true,
+        "status": "success",
+        "error_code": null,
+        "route": "digital_text",
+        "correct_fields": 8,
+        "total_fields": 8,
+        "accuracy": 1.0,
+        "exact_match": true,
+        "wrong_fields": [],
+        "needs_review": false,
+        "review_reasons": [],
+        "cost_usd": 0.001677,
+        "processing_ms": 5260,
+        "cached": true
+      },
+      {
+        "document": "L05",
+        "source_file": "L05.pdf",
+        "expected_is_invoice": true,
+        "status": "success",
+        "error_code": null,
+        "route": "digital_text",
+        "correct_fields": 8,
+        "total_fields": 8,
+        "accuracy": 1.0,
+        "exact_match": true,
+        "wrong_fields": [],
+        "needs_review": false,
+        "review_reasons": [],
+        "cost_usd": 0.001006,
+        "processing_ms": 18143,
+        "cached": true
+      },
+      {
+        "document": "L06",
+        "source_file": "L06.pdf",
+        "expected_is_invoice": true,
+        "status": "success",
+        "error_code": null,
+        "route": "digital_text",
+        "correct_fields": 8,
+        "total_fields": 8,
+        "accuracy": 1.0,
+        "exact_match": true,
+        "wrong_fields": [],
+        "needs_review": false,
+        "review_reasons": [],
+        "cost_usd": 0.000909,
+        "processing_ms": 27839,
+        "cached": true
+      },
+      {
+        "document": "L07",
+        "source_file": "L07.pdf",
+        "expected_is_invoice": true,
+        "status": "success",
+        "error_code": null,
+        "route": "digital_text",
+        "correct_fields": 7,
+        "total_fields": 8,
+        "accuracy": 0.875,
+        "exact_match": false,
+        "wrong_fields": [
+          "line_items"
+        ],
+        "needs_review": true,
+        "review_reasons": [
+          "TOTAL_MISMATCH",
+          "LLM_RESULT_CONFLICT"
+        ],
+        "cost_usd": 0.00466,
+        "processing_ms": 22048,
+        "cached": true
+      },
+      {
+        "document": "L08",
+        "source_file": "L08.pdf",
+        "expected_is_invoice": false,
+        "status": "success",
+        "error_code": null,
+        "route": "digital_text",
+        "correct_fields": 2,
+        "total_fields": 2,
+        "accuracy": 1.0,
+        "exact_match": true,
+        "wrong_fields": [],
+        "needs_review": false,
+        "review_reasons": [],
+        "cost_usd": 0.000409,
+        "processing_ms": 18405,
+        "cached": true
+      },
+      {
+        "document": "L09",
+        "source_file": "L09.pdf",
+        "expected_is_invoice": true,
+        "status": "success",
+        "error_code": null,
+        "route": "vision",
+        "correct_fields": 8,
+        "total_fields": 8,
+        "accuracy": 1.0,
+        "exact_match": true,
+        "wrong_fields": [],
+        "needs_review": false,
+        "review_reasons": [],
+        "cost_usd": 0.003684,
+        "processing_ms": 1905,
+        "cached": true
+      },
+      {
+        "document": "L10",
+        "source_file": "L10.pdf",
+        "expected_is_invoice": true,
+        "status": "success",
+        "error_code": null,
+        "route": "vision",
+        "correct_fields": 8,
+        "total_fields": 8,
+        "accuracy": 1.0,
+        "exact_match": true,
+        "wrong_fields": [],
+        "needs_review": false,
+        "review_reasons": [],
+        "cost_usd": 0.00366,
+        "processing_ms": 28544,
+        "cached": true
+      }
+    ]
+  },
+  "failures": {
+    "items": [
+      {
+        "document": "L07",
+        "field": "line_items",
+        "category": "Missing line items",
+        "expected": [
+          {
+            "description": "Brand identity package",
+            "quantity": 1,
+            "amount": 3200.0
+          },
+          {
+            "description": "Social media templates (set of 12)",
+            "quantity": 1,
+            "amount": 850.0
+          },
+          {
+            "description": "Additional revision rounds",
+            "quantity": 3,
+            "amount": 450.0
+          },
+          {
+            "description": "Returning client discount (10%)",
+            "quantity": null,
+            "amount": -450.0
+          }
+        ],
+        "predicted": [
+          {
+            "description": "Brand identity package",
+            "quantity": 1,
+            "amount": 3200.0
+          },
+          {
+            "description": "Social media templates (set of 12)",
+            "quantity": 1,
+            "amount": 850.0
+          },
+          {
+            "description": "Additional revision rounds",
+            "quantity": 3,
+            "amount": 450.0
+          }
+        ],
+        "likely_reason": "3 of 4 rows predicted; 3/4 expected rows matched; 3 predicted (route=digital_text)",
+        "proposed_fix": "Send page images for multi-line tables, raise max output tokens, and use the printed subtotal check to trigger a retry."
+      }
+    ],
+    "category_counts": {
+      "Missing line items": {
+        "errors": 1,
+        "documents": 1
+      }
+    },
+    "highest_priority": {
+      "category": "Missing line items",
+      "errors": 1,
+      "documents_affected": 1,
+      "recommendation": "Send page images for multi-line tables, raise max output tokens, and use the printed subtotal check to trigger a retry.",
+      "rationale": "ranked by number of labelled documents affected, then by error count"
+    }
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "result": {
+    "is_invoice": true,
+    "vendor": "Sakura Tea Traders B.V.",
+    "invoice_number": "2026/0314",
+    "invoice_date": "2026-03-14",
+    "currency": "EUR",
+    "line_items": [
+      {
+        "description": "Sencha Premium, 1 kg bag",
+        "quantity": 8,
+        "amount": 340.0
+      },
+      {
+        "description": "Matcha ceremonial grade, 100 g tin",
+        "quantity": 30,
+        "amount": 567.0
+      },
+      {
+        "description": "Bamboo whisk (chasen)",
+        "quantity": 12,
+        "amount": 87.0
+      },
+      {
+        "description": "Shipping and handling",
+        "quantity": 1,
+        "amount": 35.0
+      }
+    ],
+    "tax_total": 107.25,
+    "total": 1136.25,
+    "needs_review": false
+  },
+  "review_reasons": [],
+  "diagnostics": {
+    "status": "success",
+    "error_code": null,
+    "error_message": null,
+    "route": "digital_text",
+    "route_reason": "every page has a usable embedded text layer (exact text, no OCR or images needed)",
+    "document_type": "invoice",
+    "review_reasons": [],
+    "review_details": [],
+    "validation": {
+      "schema_valid": true,
+      "schema_valid_first_try": true,
+      "financial": {
+        "line_items_sum": 1029.0,
+        "tax_total": 107.25,
+        "expected_total": 1136.25,
+        "total": 1136.25,
+        "difference": 0.0,
+        "tolerance": 0.09,
+        "explanation": null,
+        "status": "pass"
+      },
+      "grounding": {
+        "checked": true,
+        "exact_text": true,
+        "invoice_number_found": true,
+        "total_found": true,
+        "vendor_found": true
+      },
+      "checks": []
+    },
+    "llm_reported_issues": [],
+    "extras": {
+      "subtotal": 1029.0,
+      "discount_total": null,
+      "other_charges_total": null,
+      "invoice_date_as_printed": "14-03-2026",
+      "line_item_unit_prices": [
+        42.5,
+        18.9,
+        7.25,
+        35.0
+      ]
+    },
+    "attempts": [
+      {
+        "number": 1,
+        "purpose": "initial",
+        "route": "digital_text",
+        "model": "groq:openai/gpt-oss-120b",
+        "http_calls": 1,
+        "input_tokens": 1712,
+        "cached_input_tokens": 0,
+        "output_tokens": 943,
+        "cost_usd": 0.0008226,
+        "latency_ms": 2467,
+        "outcome": "ok",
+        "error": null
+      }
+    ],
+    "usage": {
+      "models": [
+        "groq:openai/gpt-oss-120b"
+      ],
+      "llm_attempts": 1,
+      "http_calls": 1,
+      "input_tokens": 1712,
+      "cached_input_tokens": 0,
+      "output_tokens": 943,
+      "total_tokens": 2655,
+      "cost_usd": 0.0008226,
+      "retry_cost_usd": 0.0
+    },
+    "source": {
+      "kind": "pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 66748,
+      "sha256": "bd44e4e01dfba538f36ccc15084e65e01fdbec8b4de4ff4e2547da9d80eb7bbd",
+      "pages_total": 1,
+      "pages_processed": 1,
+      "digital_pages": 1,
+      "ocr_pages": 0,
+      "scanned_with_text_layer_pages": 0,
+      "ocr_mean_confidence": null,
+      "ocr_word_count": 0,
+      "ocr_error": null,
+      "text_chars": 1558,
+      "truncated_pages": false
+    },
+    "processing_ms": 2494,
+    "cached": false,
+    "original_cost_usd": null,
+    "original_processing_ms": null,
+    "prompt_version": "v1",
+    "pipeline_version": "1.1.0",
+    "routing_mode": "auto"
+  },
+  "source_file": "U08.pdf"
+}

@@ -3,7 +3,7 @@
 
 | Setting | Value |
 |---|---|
-| Generated | 2026-11-19T18:09:48+00:00 |
+| Generated | 2026-11-19T19:27:54+00:00 |
 | Run tag | baseline |
 | Documents evaluated | 10 |
 | LLM provider / model | groq / openai/gpt-oss-120b (vision: qwen/qwen3.8-27b) |
@@ -54,5 +54,12 @@ Proposed fix: Send page images for multi-line tables, raise max output tokens, a
 7. needs_review is set from the remaining observable problems.
 
 
-**Alternatives tried:** none executed yet with this harness. Run, for example, `make eval-experiment ROUTING=vision_always TAG=vision_always` and this section will be regenerated with the measured comparison. No result is reported here unless it was run.
+**Runs actually executed (from `reports/experiments/index.json`):**
+
+| Tag | When | Routing | Prompt | Exact match | Field acc. | Line-item F1 | Avg cost |
+|---|---|---|---|---|---|---|---|
+| main | 2026-11-19T19:24:02+00:00 | auto | v1 | 90.0% | 98.6% | 99.2% | $0.00217 |
+| baseline | 2026-11-19T19:27:54+00:00 | auto | v1 | 90.0% | 98.6% | 99.2% | $0.00217 |
+
+Interpretation of what did or did not work should be written by hand after reading the table above; with ~10 labelled documents, a difference of one document is 10 percentage points.
 

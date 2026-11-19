@@ -1,0 +1,153 @@
+{
+  "result": {
+    "is_invoice": true,
+    "vendor": "Shree Ganesh Stationers",
+    "invoice_number": "SGS/1847",
+    "invoice_date": "2026-08-19",
+    "currency": "INR",
+    "line_items": [
+      {
+        "description": "Exam pad A4 (200 pages)",
+        "quantity": 150,
+        "amount": 8700.0
+      },
+      {
+        "description": "Ball pen blue (box of 50)",
+        "quantity": 20,
+        "amount": 4800.0
+      },
+      {
+        "description": "Whiteboard duster",
+        "quantity": 10,
+        "amount": 350.0
+      },
+      {
+        "description": "Chart paper white (pack of 20)",
+        "quantity": 25,
+        "amount": 3000.0
+      },
+      {
+        "description": "Stapler pin No.10 (box)",
+        "quantity": 40,
+        "amount": 560.0
+      },
+      {
+        "description": "File folder, plastic",
+        "quantity": 100,
+        "amount": 2200.0
+      }
+    ],
+    "tax_total": 3529.8,
+    "total": 23139.8,
+    "needs_review": false
+  },
+  "review_reasons": [],
+  "diagnostics": {
+    "status": "success",
+    "error_code": null,
+    "error_message": null,
+    "route": "vision",
+    "route_reason": "scanned/photographed content: page images sent with OCR text as a hint",
+    "document_type": "invoice",
+    "review_reasons": [],
+    "review_details": [
+      {
+        "code": "OCR_UNAVAILABLE",
+        "message": "OCR could not run (Tesseract is not installed or OCR is disabled); the model read the page image without an OCR hint, and OCR-based checks were skipped",
+        "severity": "info"
+      }
+    ],
+    "validation": {
+      "schema_valid": true,
+      "schema_valid_first_try": true,
+      "financial": {
+        "line_items_sum": 19610.0,
+        "tax_total": 3529.8,
+        "expected_total": 23139.8,
+        "total": 23139.8,
+        "difference": 0.0,
+        "tolerance": 0.11,
+        "explanation": null,
+        "status": "pass"
+      },
+      "grounding": {
+        "checked": false
+      },
+      "checks": [
+        {
+          "code": "OCR_UNAVAILABLE",
+          "severity": "info",
+          "message": "OCR could not run (Tesseract is not installed or OCR is disabled); the model read the page image without an OCR hint, and OCR-based checks were skipped"
+        }
+      ]
+    },
+    "llm_reported_issues": [],
+    "extras": {
+      "subtotal": 19610.0,
+      "discount_total": null,
+      "other_charges_total": null,
+      "invoice_date_as_printed": "19/08/2026",
+      "line_item_unit_prices": [
+        58.0,
+        240.0,
+        35.0,
+        120.0,
+        14.0,
+        22.0
+      ]
+    },
+    "attempts": [
+      {
+        "number": 1,
+        "purpose": "initial",
+        "route": "vision",
+        "model": "groq:qwen/qwen3.8-27b",
+        "http_calls": 1,
+        "input_tokens": 2815,
+        "cached_input_tokens": 0,
+        "output_tokens": 384,
+        "cost_usd": 0.003788,
+        "latency_ms": 1699,
+        "outcome": "ok",
+        "error": null
+      }
+    ],
+    "usage": {
+      "models": [
+        "groq:qwen/qwen3.8-27b"
+      ],
+      "llm_attempts": 0,
+      "http_calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "total_tokens": 0,
+      "cost_usd": 0.0,
+      "retry_cost_usd": 0.0
+    },
+    "source": {
+      "kind": "image",
+      "mime_type": "image/jpeg",
+      "size_bytes": 347521,
+      "sha256": "20e9597f9dc46c26e9b3b83834e70e351799e6ec426536b0151cb60e6d645484",
+      "pages_total": 1,
+      "pages_processed": 1,
+      "digital_pages": 0,
+      "ocr_pages": 1,
+      "scanned_with_text_layer_pages": 0,
+      "ocr_mean_confidence": null,
+      "ocr_word_count": 0,
+      "ocr_error": "TESSERACT_UNAVAILABLE",
+      "text_chars": 0,
+      "truncated_pages": false
+    },
+    "processing_ms": 0,
+    "cached": true,
+    "original_cost_usd": 0.003788,
+    "original_processing_ms": 2421,
+    "prompt_version": "v1",
+    "pipeline_version": "1.1.0",
+    "routing_mode": "auto"
+  },
+  "source_file": "L02.jpg"
+}

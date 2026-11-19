@@ -80,17 +80,17 @@ def _from_collection(data: Any) -> dict[str, dict[str, Any]]:
 def _load_prediction(out_dir: Path, name: str) -> tuple[dict | None, dict | None]:
     pred_path = out_dir / f"{name}.json"
     diag_path = out_dir / "diagnostics" / f"{name}.json"
-    pred = json.loads(pred_path.read_text()) if pred_path.is_file() else None
-    diag = json.loads(diag_path.read_text()).get("diagnostics") if diag_path.is_file() else None
+    pred = json.loads(pred_path.read_text(encoding="utf-8")) if pred_path.is_file() else None
+    diag = json.loads(diag_path.read_text(encoding="utf-8")).get("diagnostics") if diag_path.is_file() else None
     return pred, diag
 
 
 def _update_index(index_path: Path, entry: dict[str, Any]) -> list[dict[str, Any]]:
-    index = json.loads(index_path.read_text()) if index_path.is_file() else []
+    index = json.loads(index_path.read_text(encoding="utf-8")) if index_path.is_file() else []
     index = [e for e in index if not (e["tag"] == entry["tag"] and e.get("synthetic") == entry.get("synthetic"))]
     index.append(entry)
     index_path.parent.mkdir(parents=True, exist_ok=True)
-    index_path.write_text(json.dumps(index, indent=2) + "\n")
+    index_path.write_text(json.dumps(index, indent=2) + "\n", encoding="utf-8")
     return index
 
 
@@ -179,9 +179,9 @@ def main(argv: list[str] | None = None) -> int:
     }
 
     baseline_path = reports_root / "experiments" / "baseline" / "evaluation.json"
-    baseline = json.loads(baseline_path.read_text()) if baseline_path.is_file() else None
+    baseline = json.loads(baseline_path.read_text(encoding="utf-8")) if baseline_path.is_file() else None
     write_evaluation(reports_dir, meta, metrics, failures, docs, baseline)
-    current = json.loads((reports_dir / "evaluation.json").read_text())
+    current = json.loads((reports_dir / "evaluation.json").read_text(encoding="utf-8"))
     index = _update_index(reports_root / "experiments" / "index.json", {
         "tag": args.tag, "generated_at": meta["generated_at"], "routing_mode": meta["routing_mode"],
         "prompt_version": meta["prompt_version"], "model": meta["model"], "synthetic": args.synthetic,

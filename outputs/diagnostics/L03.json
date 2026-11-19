@@ -1,0 +1,133 @@
+{
+  "result": {
+    "is_invoice": true,
+    "vendor": "Kaveri Office Mart Pvt Ltd",
+    "invoice_number": "KOM/26-27/00418",
+    "invoice_date": "2026-06-23",
+    "currency": "INR",
+    "line_items": [
+      {
+        "description": "A4 copier paper 75 GSM (ream)",
+        "quantity": 40,
+        "amount": 11560.0
+      },
+      {
+        "description": "Whiteboard markers (box of 10)",
+        "quantity": 12,
+        "amount": 2580.0
+      },
+      {
+        "description": "Ergonomic mesh office chair",
+        "quantity": 6,
+        "amount": 38700.0
+      },
+      {
+        "description": "Heavy-duty stapler",
+        "quantity": 4,
+        "amount": 1540.0
+      }
+    ],
+    "tax_total": 9788.4,
+    "total": 64168.4,
+    "needs_review": false
+  },
+  "review_reasons": [],
+  "diagnostics": {
+    "status": "success",
+    "error_code": null,
+    "error_message": null,
+    "route": "digital_text",
+    "route_reason": "every page has a usable embedded text layer (exact text, no OCR or images needed)",
+    "document_type": "invoice",
+    "review_reasons": [],
+    "review_details": [],
+    "validation": {
+      "schema_valid": true,
+      "schema_valid_first_try": true,
+      "financial": {
+        "line_items_sum": 54380.0,
+        "tax_total": 9788.4,
+        "expected_total": 64168.4,
+        "total": 64168.4,
+        "difference": 0.0,
+        "tolerance": 0.09,
+        "explanation": null,
+        "status": "pass"
+      },
+      "grounding": {
+        "checked": true,
+        "exact_text": true,
+        "invoice_number_found": true,
+        "total_found": true,
+        "vendor_found": true
+      },
+      "checks": []
+    },
+    "llm_reported_issues": [],
+    "extras": {
+      "subtotal": 54380.0,
+      "discount_total": null,
+      "other_charges_total": null,
+      "invoice_date_as_printed": "23/06/2026",
+      "line_item_unit_prices": [
+        289.0,
+        215.0,
+        6450.0,
+        385.0
+      ]
+    },
+    "attempts": [
+      {
+        "number": 1,
+        "purpose": "initial",
+        "route": "digital_text",
+        "model": "groq:openai/gpt-oss-120b",
+        "http_calls": 1,
+        "input_tokens": 1800,
+        "cached_input_tokens": 0,
+        "output_tokens": 1439,
+        "cost_usd": 0.0011334,
+        "latency_ms": 3519,
+        "outcome": "ok",
+        "error": null
+      }
+    ],
+    "usage": {
+      "models": [
+        "groq:openai/gpt-oss-120b"
+      ],
+      "llm_attempts": 0,
+      "http_calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "total_tokens": 0,
+      "cost_usd": 0.0,
+      "retry_cost_usd": 0.0
+    },
+    "source": {
+      "kind": "pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 45995,
+      "sha256": "a71ad66a7fbb9e5288fa6b386c6d25b8f3e3702f74dcee7bd947b110199e3945",
+      "pages_total": 1,
+      "pages_processed": 1,
+      "digital_pages": 1,
+      "ocr_pages": 0,
+      "scanned_with_text_layer_pages": 0,
+      "ocr_mean_confidence": null,
+      "ocr_word_count": 0,
+      "ocr_error": null,
+      "text_chars": 2012,
+      "truncated_pages": false
+    },
+    "processing_ms": 0,
+    "cached": true,
+    "original_cost_usd": 0.0011334,
+    "original_processing_ms": 3537,
+    "prompt_version": "v1",
+    "pipeline_version": "1.1.0",
+    "routing_mode": "auto"
+  },
+  "source_file": "L03.pdf"
+}

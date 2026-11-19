@@ -3,7 +3,7 @@
 
 | Setting | Value |
 |---|---|
-| Generated | 2026-11-19T18:09:48+00:00 |
+| Generated | 2026-11-19T19:27:54+00:00 |
 | Run tag | baseline |
 | Documents evaluated | 10 |
 | LLM provider / model | groq / openai/gpt-oss-120b (vision: qwen/qwen3.8-27b) |
@@ -29,7 +29,7 @@ Cost per call = (prompt tokens − cached tokens) × input rate + cached tokens 
 |---|---|
 | Documents | 10 (10 needed LLM calls) |
 | Total API spend to extract these documents | $0.02166 |
-| Spent during this run (cache hits cost $0) | $0.02093 (1 cached) |
+| Spent during this run (cache hits cost $0) | $0.00000 (10 cached) |
 | Average cost per document | $0.00217 |
 | Minimum / maximum cost per document | $0.00041 / $0.00466 |
 | Average input tokens (of which cached) | 2,480 (0) |

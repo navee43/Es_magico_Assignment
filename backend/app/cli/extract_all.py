@@ -58,10 +58,10 @@ def run_batch(
     records = []
     for i, (name, path) in enumerate(documents, 1):
         outcome: ExtractionOutcome = extractor.extract_file(path, use_cache=use_cache)
-        (out_dir / f"{name}.json").write_text(json.dumps(outcome.public_json(), indent=2, ensure_ascii=False) + "\n")
+        (out_dir / f"{name}.json").write_text(json.dumps(outcome.public_json(), indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
         full = outcome.full_json()
         full["source_file"] = path.name
-        (diag_dir / f"{name}.json").write_text(json.dumps(full, indent=2, ensure_ascii=False) + "\n")
+        (diag_dir / f"{name}.json").write_text(json.dumps(full, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
         d = outcome.diagnostics
         cost = d.original_cost_usd if d.cached else d.usage.cost_usd
         label = "FAILED " + (d.error_code or "") if not outcome.ok else (
@@ -111,7 +111,7 @@ def main(argv: list[str] | None = None) -> int:
     records = run_batch(documents, args.out, extractor, use_cache=not args.no_cache)
     summary = summarize(records) | {"elapsed_s": round(time.time() - started, 1), "routing_mode": settings.routing_mode,
                                     "model": settings.llm_model, "vision_model": settings.llm_vision_model}
-    (args.out / "run_summary.json").write_text(json.dumps(summary, indent=2) + "\n")
+    (args.out / "run_summary.json").write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(summary, indent=2))
     return 0
 

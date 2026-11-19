@@ -1,0 +1,133 @@
+{
+  "result": {
+    "is_invoice": true,
+    "vendor": "Northwind Logistics Ltd",
+    "invoice_number": "NWL-88213",
+    "invoice_date": "2026-04-08",
+    "currency": "GBP",
+    "line_items": [
+      {
+        "description": "Pallet freight, Manchester to Glasgow",
+        "quantity": 3,
+        "amount": 435.0
+      },
+      {
+        "description": "Fuel surcharge (flat rate)",
+        "quantity": 1,
+        "amount": 62.5
+      },
+      {
+        "description": "Warehousing, per pallet per week",
+        "quantity": 12,
+        "amount": 57.0
+      },
+      {
+        "description": "Proof-of-delivery admin fee",
+        "quantity": 3,
+        "amount": 15.0
+      }
+    ],
+    "tax_total": 113.9,
+    "total": 683.4,
+    "needs_review": false
+  },
+  "review_reasons": [],
+  "diagnostics": {
+    "status": "success",
+    "error_code": null,
+    "error_message": null,
+    "route": "digital_text",
+    "route_reason": "every page has a usable embedded text layer (exact text, no OCR or images needed)",
+    "document_type": "invoice",
+    "review_reasons": [],
+    "review_details": [],
+    "validation": {
+      "schema_valid": true,
+      "schema_valid_first_try": true,
+      "financial": {
+        "line_items_sum": 569.5,
+        "tax_total": 113.9,
+        "expected_total": 683.4,
+        "total": 683.4,
+        "difference": 0.0,
+        "tolerance": 0.09,
+        "explanation": null,
+        "status": "pass"
+      },
+      "grounding": {
+        "checked": true,
+        "exact_text": true,
+        "invoice_number_found": true,
+        "total_found": true,
+        "vendor_found": true
+      },
+      "checks": []
+    },
+    "llm_reported_issues": [],
+    "extras": {
+      "subtotal": 569.5,
+      "discount_total": null,
+      "other_charges_total": null,
+      "invoice_date_as_printed": "08 April 2026",
+      "line_item_unit_prices": [
+        145.0,
+        62.5,
+        4.75,
+        5.0
+      ]
+    },
+    "attempts": [
+      {
+        "number": 1,
+        "purpose": "initial",
+        "route": "digital_text",
+        "model": "groq:openai/gpt-oss-120b",
+        "http_calls": 1,
+        "input_tokens": 1696,
+        "cached_input_tokens": 0,
+        "output_tokens": 803,
+        "cost_usd": 0.0007362,
+        "latency_ms": 2363,
+        "outcome": "ok",
+        "error": null
+      }
+    ],
+    "usage": {
+      "models": [
+        "groq:openai/gpt-oss-120b"
+      ],
+      "llm_attempts": 0,
+      "http_calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "total_tokens": 0,
+      "cost_usd": 0.0,
+      "retry_cost_usd": 0.0
+    },
+    "source": {
+      "kind": "pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 45605,
+      "sha256": "dc1e215b11e58bc83552cdbc49d3285a82924a830294ce58c269bd098e945e16",
+      "pages_total": 1,
+      "pages_processed": 1,
+      "digital_pages": 1,
+      "ocr_pages": 0,
+      "scanned_with_text_layer_pages": 0,
+      "ocr_mean_confidence": null,
+      "ocr_word_count": 0,
+      "ocr_error": null,
+      "text_chars": 1442,
+      "truncated_pages": false
+    },
+    "processing_ms": 0,
+    "cached": true,
+    "original_cost_usd": 0.0007362,
+    "original_processing_ms": 3234,
+    "prompt_version": "v1",
+    "pipeline_version": "1.1.0",
+    "routing_mode": "auto"
+  },
+  "source_file": "L01.pdf"
+}

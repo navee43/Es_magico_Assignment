@@ -26,6 +26,10 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--routing", choices=["auto", "ocr_first", "vision_always", "text_only"])
     parser.add_argument("--no-cache", action="store_true", help="always call the LLM")
     args = parser.parse_args(argv)
+    # Windows consoles/redirects default to cp1252, which can't encode ₹ and similar characters.
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8")
 
     if not args.path.is_file():
         print(f"error: {args.path} is not a file", file=sys.stderr)

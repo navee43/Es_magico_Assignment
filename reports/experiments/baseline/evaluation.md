@@ -3,7 +3,7 @@
 
 | Setting | Value |
 |---|---|
-| Generated | 2026-11-19T18:09:48+00:00 |
+| Generated | 2026-11-19T19:27:54+00:00 |
 | Run tag | baseline |
 | Documents evaluated | 10 |
 | LLM provider / model | groq / openai/gpt-oss-120b (vision: qwen/qwen3.8-27b) |

@@ -1,0 +1,14 @@
+{
+  "documents": 20,
+  "succeeded": 20,
+  "failed": 0,
+  "invoices": 17,
+  "non_invoices": 3,
+  "needs_review": 2,
+  "cached": 14,
+  "spent_this_run_usd": 0.0073213,
+  "elapsed_s": 30.8,
+  "routing_mode": "auto",
+  "model": "openai/gpt-oss-120b",
+  "vision_model": "qwen/qwen3.8-27b"
+}

@@ -1,0 +1,147 @@
+{
+  "result": {
+    "is_invoice": true,
+    "vendor": "Metro Auto Parts",
+    "invoice_number": "MAP/D/09-0312",
+    "invoice_date": "2026-09-03",
+    "currency": "INR",
+    "line_items": [
+      {
+        "description": "Brake pad set, front (sedan)",
+        "quantity": 8,
+        "amount": 14800.0
+      },
+      {
+        "description": "Air filter element",
+        "quantity": 12,
+        "amount": 5040.0
+      },
+      {
+        "description": "Wiper blade 20 in (pair)",
+        "quantity": 15,
+        "amount": 5700.0
+      },
+      {
+        "description": "Engine oil 5W-30, 4 L can",
+        "quantity": 20,
+        "amount": 39200.0
+      },
+      {
+        "description": "Coolant concentrate, 1 L",
+        "quantity": 18,
+        "amount": 5580.0
+      }
+    ],
+    "tax_total": 19689.6,
+    "total": 90009.6,
+    "needs_review": false
+  },
+  "review_reasons": [],
+  "diagnostics": {
+    "status": "success",
+    "error_code": null,
+    "error_message": null,
+    "route": "vision",
+    "route_reason": "scanned/photographed content: page images sent with OCR text as a hint",
+    "document_type": "invoice",
+    "review_reasons": [],
+    "review_details": [
+      {
+        "code": "OCR_UNAVAILABLE",
+        "message": "OCR could not run (Tesseract is not installed or OCR is disabled); the model read the page image without an OCR hint, and OCR-based checks were skipped",
+        "severity": "info"
+      }
+    ],
+    "validation": {
+      "schema_valid": true,
+      "schema_valid_first_try": true,
+      "financial": {
+        "line_items_sum": 70320.0,
+        "tax_total": 19689.6,
+        "expected_total": 90009.6,
+        "total": 90009.6,
+        "difference": 0.0,
+        "tolerance": 0.1,
+        "explanation": null,
+        "status": "pass"
+      },
+      "grounding": {
+        "checked": false
+      },
+      "checks": [
+        {
+          "code": "OCR_UNAVAILABLE",
+          "severity": "info",
+          "message": "OCR could not run (Tesseract is not installed or OCR is disabled); the model read the page image without an OCR hint, and OCR-based checks were skipped"
+        }
+      ]
+    },
+    "llm_reported_issues": [],
+    "extras": {
+      "subtotal": 70320.0,
+      "discount_total": null,
+      "other_charges_total": null,
+      "invoice_date_as_printed": "03 Sep 2026",
+      "line_item_unit_prices": [
+        1850.0,
+        420.0,
+        380.0,
+        1960.0,
+        310.0
+      ]
+    },
+    "attempts": [
+      {
+        "number": 1,
+        "purpose": "initial",
+        "route": "vision",
+        "model": "groq:qwen/qwen3.8-27b",
+        "http_calls": 3,
+        "input_tokens": 2815,
+        "cached_input_tokens": 0,
+        "output_tokens": 352,
+        "cost_usd": 0.00366,
+        "latency_ms": 2290,
+        "outcome": "ok",
+        "error": null
+      }
+    ],
+    "usage": {
+      "models": [
+        "groq:qwen/qwen3.8-27b"
+      ],
+      "llm_attempts": 0,
+      "http_calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "total_tokens": 0,
+      "cost_usd": 0.0,
+      "retry_cost_usd": 0.0
+    },
+    "source": {
+      "kind": "pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 452792,
+      "sha256": "a8d817f496b111ddb504862205e40e0173efcb961fbf2a4beab2cc6a0b16dfef",
+      "pages_total": 1,
+      "pages_processed": 1,
+      "digital_pages": 0,
+      "ocr_pages": 1,
+      "scanned_with_text_layer_pages": 0,
+      "ocr_mean_confidence": null,
+      "ocr_word_count": 0,
+      "ocr_error": "TESSERACT_UNAVAILABLE",
+      "text_chars": 0,
+      "truncated_pages": false
+    },
+    "processing_ms": 0,
+    "cached": true,
+    "original_cost_usd": 0.00366,
+    "original_processing_ms": 28544,
+    "prompt_version": "v1",
+    "pipeline_version": "1.1.0",
+    "routing_mode": "auto"
+  },
+  "source_file": "L10.pdf"
+}

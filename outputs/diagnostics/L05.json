@@ -1,0 +1,169 @@
+{
+  "result": {
+    "is_invoice": true,
+    "vendor": "ORBIT HARDWARE SUPPLIES",
+    "invoice_number": "OHS-0261-26",
+    "invoice_date": "2026-01-27",
+    "currency": "INR",
+    "line_items": [
+      {
+        "description": "Hex bolt M10 x 60 (box of 100)",
+        "quantity": 14,
+        "amount": 8960.0
+      },
+      {
+        "description": "Wood screw 2 in (box of 500)",
+        "quantity": 20,
+        "amount": 6300.0
+      },
+      {
+        "description": "Cutting disc 4 in (pack of 25)",
+        "quantity": 12,
+        "amount": 9360.0
+      },
+      {
+        "description": "Welding electrode 3.15mm (5 kg)",
+        "quantity": 18,
+        "amount": 12420.0
+      },
+      {
+        "description": "Angle grinder 850W",
+        "quantity": 3,
+        "amount": 10350.0
+      },
+      {
+        "description": "Drill bit set HSS (13 pc)",
+        "quantity": 6,
+        "amount": 6720.0
+      },
+      {
+        "description": "Safety gloves, leather (pair)",
+        "quantity": 40,
+        "amount": 3840.0
+      },
+      {
+        "description": "Spirit level 600mm",
+        "quantity": 5,
+        "amount": 2050.0
+      },
+      {
+        "description": "Measuring tape 5m",
+        "quantity": 15,
+        "amount": 2775.0
+      },
+      {
+        "description": "Anchor fastener M12 (box of 50)",
+        "quantity": 9,
+        "amount": 7830.0
+      }
+    ],
+    "tax_total": 12708.9,
+    "total": 83313.9,
+    "needs_review": false
+  },
+  "review_reasons": [],
+  "diagnostics": {
+    "status": "success",
+    "error_code": null,
+    "error_message": null,
+    "route": "digital_text",
+    "route_reason": "every page has a usable embedded text layer (exact text, no OCR or images needed)",
+    "document_type": "invoice",
+    "review_reasons": [],
+    "review_details": [],
+    "validation": {
+      "schema_valid": true,
+      "schema_valid_first_try": true,
+      "financial": {
+        "line_items_sum": 70605.0,
+        "tax_total": 12708.9,
+        "expected_total": 83313.9,
+        "total": 83313.9,
+        "difference": 0.0,
+        "tolerance": 0.15,
+        "explanation": null,
+        "status": "pass"
+      },
+      "grounding": {
+        "checked": true,
+        "exact_text": true,
+        "invoice_number_found": true,
+        "total_found": true,
+        "vendor_found": true
+      },
+      "checks": []
+    },
+    "llm_reported_issues": [],
+    "extras": {
+      "subtotal": 70605.0,
+      "discount_total": null,
+      "other_charges_total": null,
+      "invoice_date_as_printed": "27/01/2026",
+      "line_item_unit_prices": [
+        640.0,
+        315.0,
+        780.0,
+        690.0,
+        3450.0,
+        1120.0,
+        96.0,
+        410.0,
+        185.0,
+        870.0
+      ]
+    },
+    "attempts": [
+      {
+        "number": 1,
+        "purpose": "initial",
+        "route": "digital_text",
+        "model": "groq:openai/gpt-oss-120b",
+        "http_calls": 2,
+        "input_tokens": 1893,
+        "cached_input_tokens": 0,
+        "output_tokens": 1203,
+        "cost_usd": 0.00100575,
+        "latency_ms": 3130,
+        "outcome": "ok",
+        "error": null
+      }
+    ],
+    "usage": {
+      "models": [
+        "groq:openai/gpt-oss-120b"
+      ],
+      "llm_attempts": 0,
+      "http_calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "total_tokens": 0,
+      "cost_usd": 0.0,
+      "retry_cost_usd": 0.0
+    },
+    "source": {
+      "kind": "pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 61806,
+      "sha256": "e05fde8140a6581a46704653c94de9bb14fbbf49a16e5fab64e9af54a291987b",
+      "pages_total": 1,
+      "pages_processed": 1,
+      "digital_pages": 1,
+      "ocr_pages": 0,
+      "scanned_with_text_layer_pages": 0,
+      "ocr_mean_confidence": null,
+      "ocr_word_count": 0,
+      "ocr_error": null,
+      "text_chars": 2183,
+      "truncated_pages": false
+    },
+    "processing_ms": 0,
+    "cached": true,
+    "original_cost_usd": 0.00100575,
+    "original_processing_ms": 18143,
+    "prompt_version": "v1",
+    "pipeline_version": "1.1.0",
+    "routing_mode": "auto"
+  },
+  "source_file": "L05.pdf"
+}

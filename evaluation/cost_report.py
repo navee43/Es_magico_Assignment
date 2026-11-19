@@ -21,7 +21,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--outputs", type=Path, default=PROJECT_ROOT / "outputs")
     parser.add_argument("--out", type=Path, default=PROJECT_ROOT / "reports" / "cost_analysis_all.md")
     args = parser.parse_args(argv)
-    diags = [json.loads(p.read_text())["diagnostics"] for p in sorted((args.outputs / "diagnostics").glob("*.json"))]
+    diags = [json.loads(p.read_text(encoding="utf-8"))["diagnostics"] for p in sorted((args.outputs / "diagnostics").glob("*.json"))]
     if not diags:
         print(f"No diagnostics found in {args.outputs / 'diagnostics'}; run `make extract-all` first.")
         return 1

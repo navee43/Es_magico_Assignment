@@ -1,0 +1,96 @@
+{
+  "result": {
+    "is_invoice": false,
+    "vendor": null,
+    "invoice_number": null,
+    "invoice_date": null,
+    "currency": null,
+    "line_items": null,
+    "tax_total": null,
+    "total": null,
+    "needs_review": false
+  },
+  "review_reasons": [],
+  "diagnostics": {
+    "status": "success",
+    "error_code": null,
+    "error_message": null,
+    "route": "digital_text",
+    "route_reason": "every page has a usable embedded text layer (exact text, no OCR or images needed)",
+    "document_type": "other",
+    "review_reasons": [],
+    "review_details": [],
+    "validation": {
+      "schema_valid": true,
+      "schema_valid_first_try": true,
+      "financial": {
+        "status": "not_applicable"
+      },
+      "grounding": {
+        "checked": false
+      },
+      "checks": []
+    },
+    "llm_reported_issues": [],
+    "extras": {
+      "subtotal": null,
+      "discount_total": null,
+      "other_charges_total": null,
+      "invoice_date_as_printed": null,
+      "line_item_unit_prices": []
+    },
+    "attempts": [
+      {
+        "number": 1,
+        "purpose": "initial",
+        "route": "digital_text",
+        "model": "groq:openai/gpt-oss-120b",
+        "http_calls": 2,
+        "input_tokens": 1673,
+        "cached_input_tokens": 0,
+        "output_tokens": 281,
+        "cost_usd": 0.00041955,
+        "latency_ms": 987,
+        "outcome": "ok",
+        "error": null
+      }
+    ],
+    "usage": {
+      "models": [
+        "groq:openai/gpt-oss-120b"
+      ],
+      "llm_attempts": 1,
+      "http_calls": 2,
+      "input_tokens": 1673,
+      "cached_input_tokens": 0,
+      "output_tokens": 281,
+      "total_tokens": 1954,
+      "cost_usd": 0.00041955,
+      "retry_cost_usd": 0.0
+    },
+    "source": {
+      "kind": "pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 45001,
+      "sha256": "df5f80ce52670a7dd7c073fc0d12a68aa1a39058a3eb889a061f00ed503bc9ec",
+      "pages_total": 1,
+      "pages_processed": 1,
+      "digital_pages": 1,
+      "ocr_pages": 0,
+      "scanned_with_text_layer_pages": 0,
+      "ocr_mean_confidence": null,
+      "ocr_word_count": 0,
+      "ocr_error": null,
+      "text_chars": 1106,
+      "truncated_pages": false
+    },
+    "processing_ms": 8018,
+    "cached": false,
+    "original_cost_usd": null,
+    "original_processing_ms": null,
+    "prompt_version": "v1",
+    "pipeline_version": "1.1.0",
+    "routing_mode": "auto"
+  },
+  "source_file": "U10.pdf"
+}

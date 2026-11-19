@@ -1,0 +1,141 @@
+{
+  "result": {
+    "is_invoice": true,
+    "vendor": "Lakeside Printing Co",
+    "invoice_number": "LP-10932",
+    "invoice_date": "2021-10-21",
+    "currency": "GBP",
+    "line_items": [
+      {
+        "description": "Prospectus, A4 24pp, saddle-stitched",
+        "quantity": 1500,
+        "amount": 2130.0
+      },
+      {
+        "description": "Pull-up banner 850x2000mm",
+        "quantity": 4,
+        "amount": 272.0
+      },
+      {
+        "description": "Letterhead 120gsm (ream of 500)",
+        "quantity": 6,
+        "amount": 246.0
+      },
+      {
+        "description": "Delivery",
+        "quantity": 1,
+        "amount": 28.0
+      }
+    ],
+    "tax_total": 535.2,
+    "total": 3211.2,
+    "needs_review": false
+  },
+  "review_reasons": [],
+  "diagnostics": {
+    "status": "success",
+    "error_code": null,
+    "error_message": null,
+    "route": "vision",
+    "route_reason": "scanned/photographed content: page images sent with OCR text as a hint",
+    "document_type": "invoice",
+    "review_reasons": [],
+    "review_details": [
+      {
+        "code": "OCR_UNAVAILABLE",
+        "message": "OCR could not run (Tesseract is not installed or OCR is disabled); the model read the page image without an OCR hint, and OCR-based checks were skipped",
+        "severity": "info"
+      }
+    ],
+    "validation": {
+      "schema_valid": true,
+      "schema_valid_first_try": true,
+      "financial": {
+        "line_items_sum": 2676.0,
+        "tax_total": 535.2,
+        "expected_total": 3211.2,
+        "total": 3211.2,
+        "difference": 0.0,
+        "tolerance": 0.09,
+        "explanation": null,
+        "status": "pass"
+      },
+      "grounding": {
+        "checked": false
+      },
+      "checks": [
+        {
+          "code": "OCR_UNAVAILABLE",
+          "severity": "info",
+          "message": "OCR could not run (Tesseract is not installed or OCR is disabled); the model read the page image without an OCR hint, and OCR-based checks were skipped"
+        }
+      ]
+    },
+    "llm_reported_issues": [],
+    "extras": {
+      "subtotal": 2676.0,
+      "discount_total": null,
+      "other_charges_total": null,
+      "invoice_date_as_printed": "21 Oct 2021",
+      "line_item_unit_prices": [
+        1.42,
+        68.0,
+        41.0,
+        28.0
+      ]
+    },
+    "attempts": [
+      {
+        "number": 1,
+        "purpose": "initial",
+        "route": "vision",
+        "model": "groq:qwen/qwen3.8-27b",
+        "http_calls": 2,
+        "input_tokens": 3175,
+        "cached_input_tokens": 0,
+        "output_tokens": 404,
+        "cost_usd": 0.004156,
+        "latency_ms": 2243,
+        "outcome": "ok",
+        "error": null
+      }
+    ],
+    "usage": {
+      "models": [
+        "groq:qwen/qwen3.8-27b"
+      ],
+      "llm_attempts": 1,
+      "http_calls": 2,
+      "input_tokens": 3175,
+      "cached_input_tokens": 0,
+      "output_tokens": 404,
+      "total_tokens": 3579,
+      "cost_usd": 0.004156,
+      "retry_cost_usd": 0.0
+    },
+    "source": {
+      "kind": "pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 140758,
+      "sha256": "2e158a57bdb90d25f3b41de8e1542fd20802a21d721038479800d2d78e1c4d51",
+      "pages_total": 1,
+      "pages_processed": 1,
+      "digital_pages": 0,
+      "ocr_pages": 1,
+      "scanned_with_text_layer_pages": 0,
+      "ocr_mean_confidence": null,
+      "ocr_word_count": 0,
+      "ocr_error": "TESSERACT_UNAVAILABLE",
+      "text_chars": 0,
+      "truncated_pages": false
+    },
+    "processing_ms": 2780,
+    "cached": false,
+    "original_cost_usd": null,
+    "original_processing_ms": null,
+    "prompt_version": "v1",
+    "pipeline_version": "1.1.0",
+    "routing_mode": "auto"
+  },
+  "source_file": "U05.pdf"
+}

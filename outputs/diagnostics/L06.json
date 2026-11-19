@@ -1,0 +1,133 @@
+{
+  "result": {
+    "is_invoice": true,
+    "vendor": "Anand & Rao Associates",
+    "invoice_number": "AR/2026/0093",
+    "invoice_date": "2026-05-30",
+    "currency": "INR",
+    "line_items": [
+      {
+        "description": "Monthly compliance retainer (May 2026)",
+        "quantity": null,
+        "amount": 45000.0
+      },
+      {
+        "description": "GST return filing (GSTR-1 and GSTR-3B)",
+        "quantity": 1,
+        "amount": 6500.0
+      },
+      {
+        "description": "TDS return preparation (quarterly)",
+        "quantity": 1,
+        "amount": 8000.0
+      },
+      {
+        "description": "Out-of-pocket expenses (reimbursable)",
+        "quantity": null,
+        "amount": 1240.0
+      }
+    ],
+    "tax_total": 10933.2,
+    "total": 71673.2,
+    "needs_review": false
+  },
+  "review_reasons": [],
+  "diagnostics": {
+    "status": "success",
+    "error_code": null,
+    "error_message": null,
+    "route": "digital_text",
+    "route_reason": "every page has a usable embedded text layer (exact text, no OCR or images needed)",
+    "document_type": "invoice",
+    "review_reasons": [],
+    "review_details": [],
+    "validation": {
+      "schema_valid": true,
+      "schema_valid_first_try": true,
+      "financial": {
+        "line_items_sum": 60740.0,
+        "tax_total": 10933.2,
+        "expected_total": 71673.2,
+        "total": 71673.2,
+        "difference": 0.0,
+        "tolerance": 0.09,
+        "explanation": null,
+        "status": "pass"
+      },
+      "grounding": {
+        "checked": true,
+        "exact_text": true,
+        "invoice_number_found": true,
+        "total_found": true,
+        "vendor_found": true
+      },
+      "checks": []
+    },
+    "llm_reported_issues": [],
+    "extras": {
+      "subtotal": 60740.0,
+      "discount_total": null,
+      "other_charges_total": null,
+      "invoice_date_as_printed": "30-05-2026",
+      "line_item_unit_prices": [
+        45000.0,
+        6500.0,
+        8000.0,
+        1240.0
+      ]
+    },
+    "attempts": [
+      {
+        "number": 1,
+        "purpose": "initial",
+        "route": "digital_text",
+        "model": "groq:openai/gpt-oss-120b",
+        "http_calls": 3,
+        "input_tokens": 1793,
+        "cached_input_tokens": 0,
+        "output_tokens": 1066,
+        "cost_usd": 0.00090855,
+        "latency_ms": 2793,
+        "outcome": "ok",
+        "error": null
+      }
+    ],
+    "usage": {
+      "models": [
+        "groq:openai/gpt-oss-120b"
+      ],
+      "llm_attempts": 0,
+      "http_calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "total_tokens": 0,
+      "cost_usd": 0.0,
+      "retry_cost_usd": 0.0
+    },
+    "source": {
+      "kind": "pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 45909,
+      "sha256": "de7f5517f3863ae3110cd041786f3a3251c85191f4ae488f8151acd10985bd67",
+      "pages_total": 1,
+      "pages_processed": 1,
+      "digital_pages": 1,
+      "ocr_pages": 0,
+      "scanned_with_text_layer_pages": 0,
+      "ocr_mean_confidence": null,
+      "ocr_word_count": 0,
+      "ocr_error": null,
+      "text_chars": 1870,
+      "truncated_pages": false
+    },
+    "processing_ms": 0,
+    "cached": true,
+    "original_cost_usd": 0.00090855,
+    "original_processing_ms": 27839,
+    "prompt_version": "v1",
+    "pipeline_version": "1.1.0",
+    "routing_mode": "auto"
+  },
+  "source_file": "L06.pdf"
+}

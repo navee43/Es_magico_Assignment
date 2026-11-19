@@ -1,0 +1,176 @@
+{
+  "result": {
+    "is_invoice": true,
+    "vendor": "Harborview Dental Supplies",
+    "invoice_number": "HDS-60417",
+    "invoice_date": "2026-09-14",
+    "currency": "USD",
+    "line_items": [
+      {
+        "description": "Nitrile exam gloves, M (case of 10 boxes)",
+        "quantity": 6,
+        "amount": 384.0
+      },
+      {
+        "description": "Disposable dental mirrors (pack of 100)",
+        "quantity": 4,
+        "amount": 154.0
+      },
+      {
+        "description": "Prophy paste, mint (jar of 200)",
+        "quantity": 3,
+        "amount": 127.75
+      },
+      {
+        "description": "Saliva ejector tips (bag of 100)",
+        "quantity": 10,
+        "amount": 98.0
+      },
+      {
+        "description": "Patient bibs (case of 500)",
+        "quantity": 2,
+        "amount": 72.0
+      }
+    ],
+    "tax_total": 85.25,
+    "total": 917.0,
+    "needs_review": true
+  },
+  "review_reasons": [
+    "TOTAL_MISMATCH"
+  ],
+  "diagnostics": {
+    "status": "success",
+    "error_code": null,
+    "error_message": null,
+    "route": "vision",
+    "route_reason": "scanned/photographed content: page images sent with OCR text as a hint",
+    "document_type": "invoice",
+    "review_reasons": [
+      "TOTAL_MISMATCH"
+    ],
+    "review_details": [
+      {
+        "code": "TOTAL_MISMATCH",
+        "message": "line items + tax = 921.00, but total = 917.0 (difference -4.00); line items sum to 835.75 but the printed subtotal is 831.75 (missing or misread line items?)",
+        "severity": "review"
+      },
+      {
+        "code": "OCR_UNAVAILABLE",
+        "message": "OCR could not run (Tesseract is not installed or OCR is disabled); the model read the page image without an OCR hint, and OCR-based checks were skipped",
+        "severity": "info"
+      }
+    ],
+    "validation": {
+      "retry_selected": false,
+      "schema_valid": true,
+      "schema_valid_first_try": true,
+      "financial": {
+        "line_items_sum": 835.75,
+        "tax_total": 85.25,
+        "expected_total": 921.0,
+        "total": 917.0,
+        "difference": -4.0,
+        "tolerance": 0.1,
+        "explanation": "line items + tax = 921.00, but total = 917.0 (difference -4.00); line items sum to 835.75 but the printed subtotal is 831.75 (missing or misread line items?)",
+        "status": "mismatch"
+      },
+      "grounding": {
+        "checked": false
+      },
+      "checks": [
+        {
+          "code": "TOTAL_MISMATCH",
+          "severity": "review",
+          "message": "line items + tax = 921.00, but total = 917.0 (difference -4.00); line items sum to 835.75 but the printed subtotal is 831.75 (missing or misread line items?)"
+        },
+        {
+          "code": "OCR_UNAVAILABLE",
+          "severity": "info",
+          "message": "OCR could not run (Tesseract is not installed or OCR is disabled); the model read the page image without an OCR hint, and OCR-based checks were skipped"
+        }
+      ]
+    },
+    "llm_reported_issues": [],
+    "extras": {
+      "subtotal": 831.75,
+      "discount_total": null,
+      "other_charges_total": null,
+      "invoice_date_as_printed": "09/14/2026",
+      "line_item_unit_prices": [
+        64.0,
+        38.5,
+        42.25,
+        9.8,
+        36.0
+      ]
+    },
+    "attempts": [
+      {
+        "number": 1,
+        "purpose": "initial",
+        "route": "vision",
+        "model": "groq:qwen/qwen3.8-27b",
+        "http_calls": 1,
+        "input_tokens": 2815,
+        "cached_input_tokens": 0,
+        "output_tokens": 347,
+        "cost_usd": 0.00364,
+        "latency_ms": 1204,
+        "outcome": "ok",
+        "error": null
+      },
+      {
+        "number": 2,
+        "purpose": "validation_retry",
+        "route": "vision",
+        "model": "groq:qwen/qwen3.8-27b",
+        "http_calls": 2,
+        "input_tokens": 2949,
+        "cached_input_tokens": 0,
+        "output_tokens": 353,
+        "cost_usd": 0.0037712,
+        "latency_ms": 1591,
+        "outcome": "ok",
+        "error": null
+      }
+    ],
+    "usage": {
+      "models": [
+        "groq:qwen/qwen3.8-27b"
+      ],
+      "llm_attempts": 0,
+      "http_calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "total_tokens": 0,
+      "cost_usd": 0.0,
+      "retry_cost_usd": 0.0
+    },
+    "source": {
+      "kind": "image",
+      "mime_type": "image/jpeg",
+      "size_bytes": 117339,
+      "sha256": "80e1436d67270834c2840e3b5729c511a66818273ec3f609cdde246b7c00674b",
+      "pages_total": 1,
+      "pages_processed": 1,
+      "digital_pages": 0,
+      "ocr_pages": 1,
+      "scanned_with_text_layer_pages": 0,
+      "ocr_mean_confidence": null,
+      "ocr_word_count": 0,
+      "ocr_error": "TESSERACT_UNAVAILABLE",
+      "text_chars": 0,
+      "truncated_pages": false
+    },
+    "processing_ms": 20,
+    "cached": true,
+    "original_cost_usd": 0.0074112,
+    "original_processing_ms": 10894,
+    "prompt_version": "v1",
+    "pipeline_version": "1.1.0",
+    "routing_mode": "auto"
+  },
+  "source_file": "U02.jpg"
+}

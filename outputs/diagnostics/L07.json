@@ -1,0 +1,171 @@
+{
+  "result": {
+    "is_invoice": true,
+    "vendor": "PIXEL HARBOR STUDIO",
+    "invoice_number": "PHS-1042",
+    "invoice_date": "2026-03-14",
+    "currency": "USD",
+    "line_items": [
+      {
+        "description": "Brand identity package",
+        "quantity": 1,
+        "amount": 3200.0
+      },
+      {
+        "description": "Social media templates (set of 12)",
+        "quantity": 1,
+        "amount": 850.0
+      },
+      {
+        "description": "Additional revision rounds",
+        "quantity": 3,
+        "amount": 450.0
+      }
+    ],
+    "tax_total": 334.13,
+    "total": 4384.13,
+    "needs_review": true
+  },
+  "review_reasons": [
+    "TOTAL_MISMATCH",
+    "LLM_RESULT_CONFLICT"
+  ],
+  "diagnostics": {
+    "status": "success",
+    "error_code": null,
+    "error_message": null,
+    "route": "digital_text",
+    "route_reason": "every page has a usable embedded text layer (exact text, no OCR or images needed)",
+    "document_type": "invoice",
+    "review_reasons": [
+      "TOTAL_MISMATCH",
+      "LLM_RESULT_CONFLICT"
+    ],
+    "review_details": [
+      {
+        "code": "TOTAL_MISMATCH",
+        "message": "line items + tax = 4834.13, but total = 4384.13 (difference -450.00); line items sum to 4500.0 but the printed subtotal is 4050.0 (missing or misread line items?)",
+        "severity": "review"
+      },
+      {
+        "code": "LLM_RESULT_CONFLICT",
+        "message": "the two extraction attempts disagree on: line_items",
+        "severity": "review"
+      }
+    ],
+    "validation": {
+      "retry_selected": false,
+      "schema_valid": true,
+      "schema_valid_first_try": true,
+      "financial": {
+        "line_items_sum": 4500.0,
+        "tax_total": 334.13,
+        "expected_total": 4834.13,
+        "total": 4384.13,
+        "difference": -450.0,
+        "tolerance": 0.08,
+        "explanation": "line items + tax = 4834.13, but total = 4384.13 (difference -450.00); line items sum to 4500.0 but the printed subtotal is 4050.0 (missing or misread line items?)",
+        "status": "mismatch"
+      },
+      "grounding": {
+        "checked": true,
+        "exact_text": true,
+        "invoice_number_found": true,
+        "total_found": true,
+        "vendor_found": true
+      },
+      "checks": [
+        {
+          "code": "TOTAL_MISMATCH",
+          "severity": "review",
+          "message": "line items + tax = 4834.13, but total = 4384.13 (difference -450.00); line items sum to 4500.0 but the printed subtotal is 4050.0 (missing or misread line items?)"
+        },
+        {
+          "code": "LLM_RESULT_CONFLICT",
+          "severity": "review",
+          "message": "the two extraction attempts disagree on: line_items"
+        }
+      ]
+    },
+    "llm_reported_issues": [],
+    "extras": {
+      "subtotal": 4050.0,
+      "discount_total": null,
+      "other_charges_total": null,
+      "invoice_date_as_printed": "March 14, 2026",
+      "line_item_unit_prices": [
+        3200.0,
+        850.0,
+        150.0
+      ]
+    },
+    "attempts": [
+      {
+        "number": 1,
+        "purpose": "initial",
+        "route": "digital_text",
+        "model": "groq:openai/gpt-oss-120b",
+        "http_calls": 3,
+        "input_tokens": 1690,
+        "cached_input_tokens": 0,
+        "output_tokens": 986,
+        "cost_usd": 0.0008451,
+        "latency_ms": 2679,
+        "outcome": "ok",
+        "error": null
+      },
+      {
+        "number": 2,
+        "purpose": "validation_retry",
+        "route": "vision",
+        "model": "groq:qwen/qwen3.8-27b",
+        "http_calls": 1,
+        "input_tokens": 3304,
+        "cached_input_tokens": 0,
+        "output_tokens": 293,
+        "cost_usd": 0.0038152,
+        "latency_ms": 1269,
+        "outcome": "ok",
+        "error": null
+      }
+    ],
+    "usage": {
+      "models": [
+        "groq:openai/gpt-oss-120b",
+        "groq:qwen/qwen3.8-27b"
+      ],
+      "llm_attempts": 0,
+      "http_calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "total_tokens": 0,
+      "cost_usd": 0.0,
+      "retry_cost_usd": 0.0
+    },
+    "source": {
+      "kind": "pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 60992,
+      "sha256": "13ee565cb7c2ccaff0f4fb5b608449a68209e2f947511d3b1c926789ec50c54c",
+      "pages_total": 1,
+      "pages_processed": 1,
+      "digital_pages": 1,
+      "ocr_pages": 0,
+      "scanned_with_text_layer_pages": 0,
+      "ocr_mean_confidence": null,
+      "ocr_word_count": 0,
+      "ocr_error": null,
+      "text_chars": 1466,
+      "truncated_pages": false
+    },
+    "processing_ms": 0,
+    "cached": true,
+    "original_cost_usd": 0.0046603,
+    "original_processing_ms": 22048,
+    "prompt_version": "v1",
+    "pipeline_version": "1.1.0",
+    "routing_mode": "auto"
+  },
+  "source_file": "L07.pdf"
+}

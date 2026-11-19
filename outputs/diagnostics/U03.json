@@ -1,0 +1,139 @@
+{
+  "result": {
+    "is_invoice": true,
+    "vendor": "QUICKSERVE IT RENTALS",
+    "invoice_number": "QS-30918",
+    "invoice_date": "2026-11-03",
+    "currency": "USD",
+    "line_items": [
+      {
+        "description": "On-site technician (hours)",
+        "quantity": 12.5,
+        "amount": 1062.5
+      },
+      {
+        "description": "Laptop rental (per day)",
+        "quantity": 9,
+        "amount": 198.0
+      },
+      {
+        "description": "Travel charge",
+        "quantity": 1,
+        "amount": 45.0
+      }
+    ],
+    "tax_total": null,
+    "total": 1305.5,
+    "needs_review": false
+  },
+  "review_reasons": [],
+  "diagnostics": {
+    "status": "success",
+    "error_code": null,
+    "error_message": null,
+    "route": "digital_text",
+    "route_reason": "every page has a usable embedded text layer (exact text, no OCR or images needed)",
+    "document_type": "invoice",
+    "review_reasons": [],
+    "review_details": [
+      {
+        "code": "TAX_NOT_FOUND",
+        "message": "no tax amount was found on the document",
+        "severity": "info"
+      }
+    ],
+    "validation": {
+      "schema_valid": true,
+      "schema_valid_first_try": true,
+      "financial": {
+        "line_items_sum": 1305.5,
+        "tax_total": null,
+        "expected_total": 1305.5,
+        "total": 1305.5,
+        "difference": 0.0,
+        "tolerance": 0.08,
+        "explanation": null,
+        "status": "pass"
+      },
+      "grounding": {
+        "checked": true,
+        "exact_text": true,
+        "invoice_number_found": true,
+        "total_found": true,
+        "vendor_found": true
+      },
+      "checks": [
+        {
+          "code": "TAX_NOT_FOUND",
+          "severity": "info",
+          "message": "no tax amount was found on the document"
+        }
+      ]
+    },
+    "llm_reported_issues": [],
+    "extras": {
+      "subtotal": 1305.5,
+      "discount_total": null,
+      "other_charges_total": null,
+      "invoice_date_as_printed": "Nov 03, 2026",
+      "line_item_unit_prices": [
+        85.0,
+        22.0,
+        45.0
+      ]
+    },
+    "attempts": [
+      {
+        "number": 1,
+        "purpose": "initial",
+        "route": "digital_text",
+        "model": "groq:openai/gpt-oss-120b",
+        "http_calls": 1,
+        "input_tokens": 1644,
+        "cached_input_tokens": 0,
+        "output_tokens": 643,
+        "cost_usd": 0.0006324,
+        "latency_ms": 1807,
+        "outcome": "ok",
+        "error": null
+      }
+    ],
+    "usage": {
+      "models": [
+        "groq:openai/gpt-oss-120b"
+      ],
+      "llm_attempts": 0,
+      "http_calls": 0,
+      "input_tokens": 0,
+      "cached_input_tokens": 0,
+      "output_tokens": 0,
+      "total_tokens": 0,
+      "cost_usd": 0.0,
+      "retry_cost_usd": 0.0
+    },
+    "source": {
+      "kind": "pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 60815,
+      "sha256": "2c4d256abed91cf748b46bf57232e946af4bae788adcb72b20e6469081c38b10",
+      "pages_total": 1,
+      "pages_processed": 1,
+      "digital_pages": 1,
+      "ocr_pages": 0,
+      "scanned_with_text_layer_pages": 0,
+      "ocr_mean_confidence": null,
+      "ocr_word_count": 0,
+      "ocr_error": null,
+      "text_chars": 1228,
+      "truncated_pages": false
+    },
+    "processing_ms": 19,
+    "cached": true,
+    "original_cost_usd": 0.0006324,
+    "original_processing_ms": 1817,
+    "prompt_version": "v1",
+    "pipeline_version": "1.1.0",
+    "routing_mode": "auto"
+  },
+  "source_file": "U03.pdf"
+}

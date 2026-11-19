@@ -1,0 +1,145 @@
+{
+  "result": {
+    "is_invoice": true,
+    "vendor": "Greenleaf Catering Co",
+    "invoice_number": "GC/0204",
+    "invoice_date": "2026-02-07",
+    "currency": "INR",
+    "line_items": [
+      {
+        "description": "Vegetarian buffet lunch, per head",
+        "quantity": 120,
+        "amount": 57600.0
+      },
+      {
+        "description": "Live pasta counter (event)",
+        "quantity": 1,
+        "amount": 18000.0
+      },
+      {
+        "description": "Soft drinks and mocktails, per head",
+        "quantity": 120,
+        "amount": 10200.0
+      },
+      {
+        "description": "Service charge (10%)",
+        "quantity": null,
+        "amount": 8580.0
+      }
+    ],
+    "tax_total": 4719.0,
+    "total": 99099.0,
+    "needs_review": false
+  },
+  "review_reasons": [],
+  "diagnostics": {
+    "status": "success",
+    "error_code": null,
+    "error_message": null,
+    "route": "digital_text",
+    "route_reason": "every page has a usable embedded text layer (exact text, no OCR or images needed)",
+    "document_type": "invoice",
+    "review_reasons": [],
+    "review_details": [
+      {
+        "code": "AMBIGUOUS_DATE",
+        "message": "Day/month order of the printed date is ambiguous",
+        "severity": "info"
+      }
+    ],
+    "validation": {
+      "schema_valid": true,
+      "schema_valid_first_try": true,
+      "financial": {
+        "line_items_sum": 94380.0,
+        "tax_total": 4719.0,
+        "expected_total": 99099.0,
+        "total": 99099.0,
+        "difference": 0.0,
+        "tolerance": 0.09,
+        "explanation": null,
+        "status": "pass"
+      },
+      "grounding": {
+        "checked": true,
+        "exact_text": true,
+        "invoice_number_found": true,
+        "total_found": true,
+        "vendor_found": true
+      },
+      "checks": [
+        {
+          "code": "AMBIGUOUS_DATE",
+          "severity": "info",
+          "message": "Day/month order of the printed date is ambiguous"
+        }
+      ]
+    },
+    "llm_reported_issues": [],
+    "extras": {
+      "subtotal": 94380.0,
+      "discount_total": null,
+      "other_charges_total": null,
+      "invoice_date_as_printed": "07/02/2026",
+      "line_item_unit_prices": [
+        480.0,
+        18000.0,
+        85.0,
+        null
+      ]
+    },
+    "attempts": [
+      {
+        "number": 1,
+        "purpose": "initial",
+        "route": "digital_text",
+        "model": "groq:openai/gpt-oss-120b",
+        "http_calls": 3,
+        "input_tokens": 1703,
+        "cached_input_tokens": 1280,
+        "output_tokens": 899,
+        "cost_usd": 0.00069885,
+        "latency_ms": 2286,
+        "outcome": "ok",
+        "error": null
+      }
+    ],
+    "usage": {
+      "models": [
+        "groq:openai/gpt-oss-120b"
+      ],
+      "llm_attempts": 1,
+      "http_calls": 3,
+      "input_tokens": 1703,
+      "cached_input_tokens": 1280,
+      "output_tokens": 899,
+      "total_tokens": 2602,
+      "cost_usd": 0.00069885,
+      "retry_cost_usd": 0.0
+    },
+    "source": {
+      "kind": "pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 45535,
+      "sha256": "5c8cd7320b706b85cbc060937623d4e6194596d0d550185f37628fc89c7a234e",
+      "pages_total": 1,
+      "pages_processed": 1,
+      "digital_pages": 1,
+      "ocr_pages": 0,
+      "scanned_with_text_layer_pages": 0,
+      "ocr_mean_confidence": null,
+      "ocr_word_count": 0,
+      "ocr_error": null,
+      "text_chars": 1419,
+      "truncated_pages": false
+    },
+    "processing_ms": 14338,
+    "cached": false,
+    "original_cost_usd": null,
+    "original_processing_ms": null,
+    "prompt_version": "v1",
+    "pipeline_version": "1.1.0",
+    "routing_mode": "auto"
+  },
+  "source_file": "U09.pdf"
+}
